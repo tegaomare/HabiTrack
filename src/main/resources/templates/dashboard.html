@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - HabiTrack</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="/" class="brand">HabiTrack</a>
+      <div>
+        <a href="/features">Features</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+      <h1>Welcome, [User Name]</h1>
+      <p>Your habit tracking overview</p>
+
+      <div class="dashboard-content">
+        <div class="dashboard-card">
+          <h3>Today's Progress</h3>
+          <p>3/5 Habits Completed</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Weekly Goal</h3>
+          <p>15/20 Habits Completed</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Current Streak</h3>
+          <p>5 Days</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 HabiTrack | Your Personal Habit Tracker</p>
+    </footer>
+  </body>
+</html>

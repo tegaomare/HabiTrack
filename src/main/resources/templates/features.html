@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HabiTrack Features</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="/">Home</a>
+      <a href="/features">Features</a>
+      <a href="/signup">Sign Up</a>
+      <a
+        href="/login"
+        th:if="${#httpServletRequest != null && #httpServletRequest.remoteUser == null}"
+        >Login</a
+      >
+      <a
+        href="/dashboard"
+        th:if="${#httpServletRequest != null && #httpServletRequest.remoteUser != null}"
+        >Dashboard</a
+      >
+      <a
+        href="/logout"
+        th:if="${#httpServletRequest != null && #httpServletRequest.remoteUser != null}"
+        >Logout</a
+      >
+    </nav>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <h1>Our Features</h1>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img
+            th:src="@{/img/progress-icon.png}"
+            alt="Progress Tracking"
+            class="feature-icon"
+          />
+          <h3>Progress Tracking</h3>
+          <p>
+            Monitor your daily habits and visualize your progress with detailed
+            charts.
+          </p>
+        </div>
+        <div class="feature-card">
+          <img
+            th:src="@{/img/streak-icon.png}"
+            alt="Habit Streaks"
+            class="feature-icon"
+          />
+          <h3>Habit Streaks</h3>
+          <p>Earn streaks for maintaining habits over consecutive days.</p>
+        </div>
+        <div class="feature-card">
+          <img
+            th:src="@{/img/reminder-icon.png}"
+            alt="Reminders"
+            class="feature-icon"
+          />
+          <h3>Reminders</h3>
+          <p>Set reminders to stay on track and never miss a habit.</p>
+        </div>
+      </div>
+      <div class="coming-soon">
+        <h2>More Features Coming Soon!</h2>
+        <p>
+          We’re constantly working to add new tools and improvements to help you
+          achieve your goals.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 HabiTrack | Your Personal Habit Tracker</p>
+    </footer>
+  </body>
+</html>

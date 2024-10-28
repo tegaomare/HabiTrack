@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to HabiTrack</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="/">HabiTrack</a>
+      <a href="/features">Features</a>
+      <a href="/signup">Sign Up</a>
+      <a
+        href="/login"
+        th:if="${#httpServletRequest != null && #httpServletRequest.remoteUser == null}"
+        >Login</a
+      >
+      <a
+        href="/dashboard"
+        th:if="${#httpServletRequest != null && #httpServletRequest.remoteUser != null}"
+        >Dashboard</a
+      >
+      <a
+        href="/logout"
+        th:if="${#httpServletRequest != null && #httpServletRequest.remoteUser != null}"
+        >Logout</a
+      >
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Track Your Habits, Achieve Your Goals</h1>
+        <p>Your journey towards personal growth starts here.</p>
+        <a class="button-primary" href="/features">Explore Features</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 HabiTrack | Your Personal Habit Tracker</p>
+    </footer>
+  </body>
+</html>

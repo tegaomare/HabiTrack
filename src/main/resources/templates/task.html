@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="habit-id" th:content="${habit.id}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${habit.name}">Habit Details</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="/" class="logo">HabiTrack</a>
+      <div class="nav-links">
+        <a href="#features" class="nav-item">Features</a>
+        <a href="/signup" class="nav-item">Sign Up</a>
+        <a href="/login" class="nav-item">Login</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section for Task Page -->
+    <section
+      class="hero hero-task"
+      style="background-image: url('/img/habit-bg.jpg')"
+    >
+      <div class="hero-overlay">
+        <h1 class="habit-title" th:text="${habit.name}">Habit Name</h1>
+        <p class="habit-subtitle" th:text="${habit.description}">
+          Habit Description
+        </p>
+      </div>
+    </section>
+
+    <!-- Habit Details & Interaction -->
+    <main
+      class="habit-details"
+      style="background-color: #f4f4f4; padding: 20px; border-radius: 10px"
+    >
+      <div class="habit-info">
+        <p>
+          <strong>Target:</strong>
+          <span th:text="${habit.target}">Habit Target</span>
+        </p>
+        <div class="action-buttons">
+          <button class="btn primary-btn" id="complete-habit">
+            Complete Habit
+          </button>
+          <button class="btn secondary-btn" id="view-completions">
+            View Completions
+          </button>
+        </div>
+      </div>
+
+      <!-- Section to display completions -->
+      <section id="habit-completions" class="completions-section hidden">
+        <h2>Completion Records</h2>
+        <ul id="completion-list" class="completion-list"></ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 HabiTrack | Your Personal Habit Tracker</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script th:src="@{/js/task.js}"></script>
+  </body>
+</html>
